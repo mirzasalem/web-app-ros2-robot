@@ -49,7 +49,7 @@ Runs on [ROS 2 Jazzy](https://docs.ros.org/en/jazzy/): drive the robot, build ma
 | Resource | URL / note |
 |----------|------------|
 | Buddy ROS 2 package | [buddy-ros2](https://github.com/mirzasalem/buddy-ros2) (**private** — contact Mirza for access) |
-| ESP32 + encoder firmware | https://github.com/mirzasalem/esp2ros2 |
+| ESP32 + encoder firmware | [https://github.com/mirzasalem/ESP32-firmware-for-differential-drive-robot](https://github.com/mirzasalem/ESP32-firmware-for-differential-drive-robot) |
 | Web app (this repo) | https://github.com/mirzasalem/web-app-ros2-robot |
 | Author / contact | [Mirza Salem](https://github.com/mirzasalem/) |
 
