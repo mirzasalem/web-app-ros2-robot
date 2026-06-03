@@ -1,0 +1,5 @@
+django==4.2.23
+djangorestframework>=3.14,<4
+django-cors-headers>=4.3,<5
+PyYAML>=6.0,<7
+# Token auth is included with djangorestframework

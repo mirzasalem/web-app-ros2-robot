@@ -1,0 +1,33 @@
+.docs-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.docs-subnav-link {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.12);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+[data-theme='light'] .docs-subnav-link {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.docs-subnav-link:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-border);
+}
+
+.docs-subnav-link.active {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}

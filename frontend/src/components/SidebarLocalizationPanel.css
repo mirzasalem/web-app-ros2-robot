@@ -1,0 +1,39 @@
+.localization-drawer .localization-step {
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.localization-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.localization-select {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+[data-theme='light'] .localization-select {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.localization-select:disabled {
+  opacity: 0.6;
+}
+
+.localization-path {
+  margin: 0;
+}

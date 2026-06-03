@@ -1,0 +1,98 @@
+/* Liquid glass design tokens */
+:root {
+  --page-gutter: 1.25rem;
+}
+
+:root,
+[data-theme='dark'] {
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --glass-blur: 20px;
+  --text-primary: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #e4e4e7;
+  --accent-glow: rgba(228, 228, 231, 0.18);
+  --accent-soft: rgba(228, 228, 231, 0.1);
+  --accent-medium: rgba(228, 228, 231, 0.18);
+  --accent-strong: rgba(228, 228, 231, 0.28);
+  --accent-border: rgba(228, 228, 231, 0.32);
+  --accent-gradient: linear-gradient(135deg, #52525b 0%, #a1a1aa 50%, #d4d4d8 100%);
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --page-bg: #09090b;
+  --liquid-grad: linear-gradient(165deg, #09090b 0%, #121214 42%, #0a0a0c 100%);
+  --blob-1: #27272a;
+  --blob-2: #3f3f46;
+  --blob-3: #1c1917;
+  --hero-shine: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(161, 161, 170, 0.04) 50%,
+    transparent 100%
+  );
+  --btn-primary-bg: linear-gradient(135deg, #fafafa 0%, #d4d4d8 100%);
+  --btn-primary-text: #09090b;
+}
+
+[data-theme='light'] {
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-highlight: rgba(255, 255, 255, 1);
+  --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --accent: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --accent-soft: rgba(2, 132, 199, 0.12);
+  --accent-medium: rgba(2, 132, 199, 0.2);
+  --accent-strong: rgba(2, 132, 199, 0.35);
+  --accent-border: rgba(2, 132, 199, 0.4);
+  --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
+  --ok: #15803d;
+  --warn: #a16207;
+  --danger: #b91c1c;
+  --page-bg: #e0f2fe;
+  --liquid-grad: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 50%, #cffafe 100%);
+  --blob-1: #38bdf8;
+  --blob-2: #a78bfa;
+  --blob-3: #34d399;
+  --hero-shine: linear-gradient(
+    135deg,
+    rgba(2, 132, 199, 0.12) 0%,
+    rgba(129, 140, 248, 0.08) 50%,
+    transparent 100%
+  );
+  --btn-primary-bg: linear-gradient(135deg, #38bdf8, #818cf8);
+  --btn-primary-text: #ffffff;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+}
+
+.glass-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow), inset 0 1px 1px var(--glass-highlight);
+}
+
+.loading-screen {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}

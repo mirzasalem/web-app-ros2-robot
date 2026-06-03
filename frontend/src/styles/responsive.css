@@ -1,0 +1,218 @@
+/* Desktop: sidebar always visible (icon rail or full width) */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: none !important;
+  }
+
+  .main-content {
+    margin-left: var(--sidebar-width) !important;
+  }
+}
+
+/* —— Mobile / tablet breakpoints —— */
+/* Sidebar overlay + full-width content: max-width 768px */
+/* Compact typography & single-column layouts: max-width 640px */
+/* Small phones: max-width 480px */
+
+@media (max-width: 768px) {
+  :root {
+    --page-gutter: 1rem;
+    --sidebar-expanded-width: min(260px, 78vw);
+  }
+
+  .main-content {
+    margin-left: var(--sidebar-width);
+    padding: var(--page-gutter);
+  }
+
+  .main-content--menu-open {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Expanded sidebar overlays content on small screens */
+  .sidebar:not(.sidebar--collapsed) {
+    z-index: 210;
+    box-shadow: 8px 0 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .sidebar-expand-backdrop {
+    display: block;
+  }
+
+  /* Drawers: use space beside the icon rail */
+  .teleop-backdrop {
+    left: var(--sidebar-width);
+  }
+
+  .teleop-drawer {
+    left: var(--sidebar-width);
+    width: min(320px, calc(100vw - var(--sidebar-width)));
+    max-width: calc(100vw - var(--sidebar-width));
+    padding: 1rem var(--page-gutter) 1.25rem;
+  }
+
+  .page-header {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .page-header--prominent h1 {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  .page-header--row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-bar {
+    top: var(--page-gutter);
+    right: var(--page-gutter);
+    left: auto;
+  }
+
+  .top-bar-trigger-name {
+    max-width: 100px;
+  }
+
+  .hero-telemetry {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-pose code {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .mapping-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .buddy-docs-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .buddy-docs-sidebar {
+    position: static;
+  }
+
+  .docs-page--wide {
+    max-width: 100%;
+  }
+
+  .admin-page {
+    max-width: 100%;
+  }
+
+  .user-table {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 0.5rem 0.35rem;
+    font-size: 0.82rem;
+  }
+
+  .user-table input {
+    min-width: 64px;
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+
+}
+
+@media (max-width: 640px) {
+  .status-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-map-col .rviz-map {
+    min-height: 280px;
+  }
+
+  .teleop-dpad-plate {
+    max-width: 100%;
+  }
+
+  .teleop-dpad-grid {
+    max-width: min(220px, 72vw);
+  }
+
+  .robot-position {
+    padding: 1rem;
+  }
+
+  .notif-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .notif-item .btn-secondary {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-gutter: 0.75rem;
+    --sidebar-collapsed-width: 64px;
+  }
+
+  .status-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .login-page {
+    padding: var(--page-gutter);
+    align-items: flex-start;
+    padding-top: calc(var(--page-gutter) + 3rem);
+  }
+
+  .login-card {
+    padding: 1.35rem 1.15rem;
+    max-width: 100%;
+  }
+
+  .signup-card {
+    max-width: 100%;
+  }
+
+  .demo-chips {
+    flex-direction: column;
+  }
+
+  .demo-chip {
+    width: 100%;
+    text-align: center;
+  }
+
+  .top-bar-trigger-name {
+    display: none;
+  }
+
+  .top-bar-trigger {
+    padding: 0.35rem;
+  }
+
+  .auth-theme-toggle-label {
+    display: none;
+  }
+
+  .auth-theme-toggle {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .buddy-docs-picker-btn {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .page-narrow {
+    max-width: 100%;
+  }
+}

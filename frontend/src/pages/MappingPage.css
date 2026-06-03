@@ -1,0 +1,223 @@
+.mapping-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .mapping-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mapping-controls {
+  padding: 1.1rem 1.25rem;
+  border-radius: 16px;
+}
+
+.mapping-status-card {
+  margin-bottom: 1rem;
+}
+
+.mapping-idle-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.mapping-save-hint {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+}
+
+.mapping-save-hint p {
+  margin: 0.4rem 0;
+  color: var(--text-muted);
+}
+
+.mapping-save-hint code {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  word-break: break-all;
+  color: var(--accent);
+}
+
+.mapping-teleop-panel {
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  min-height: 200px;
+  opacity: 0.55;
+  transition: opacity 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mapping-teleop-panel--active {
+  opacity: 1;
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.25);
+}
+
+.mapping-teleop-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.mapping-teleop-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.mapping-teleop-placeholder-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.5;
+}
+
+.mapping-teleop-panel .teleop-pad {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.mapping-teleop-panel .teleop-status-bar {
+  justify-content: center;
+}
+
+.mapping-setup-warn {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(251, 191, 36, 0.45);
+  background: rgba(251, 191, 36, 0.08);
+  font-size: 0.88rem;
+}
+
+.mapping-setup-warn ul {
+  margin: 0.5rem 0 0.5rem 1.1rem;
+  padding: 0;
+}
+
+.mapping-setup-warn li {
+  margin: 0.25rem 0;
+}
+
+.mapping-setup-paths {
+  margin: 0.5rem 0 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.mapping-stop-sidebar-hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.mapping-teleop-stop-wrap {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mapping-stop-stack-btn {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+}
+
+.mapping-stop-stack-hint {
+  margin: 0.6rem auto 0;
+  max-width: 320px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.mapping-foxglove-panel {
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 16px;
+}
+
+.mapping-foxglove-panel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.mapping-foxglove-panel p {
+  margin: 0.35rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.mapping-foxglove-ws-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.mapping-foxglove-ws {
+  flex: 1 1 200px;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  word-break: break-all;
+  font-family: ui-monospace, monospace;
+}
+
+.mapping-foxglove-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mapping-foxglove-btn {
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.mapping-foxglove-btn:hover {
+  filter: brightness(1.08);
+}
+
+.mapping-foxglove-btn.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mapping-foxglove-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mapping-foxglove-note {
+  margin-top: 0.65rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,98 @@
+.mapping-drawer {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.mapping-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+}
+
+.mapping-pill.on {
+  color: var(--ok);
+  border-color: rgba(74, 222, 128, 0.45);
+  background: rgba(74, 222, 128, 0.12);
+}
+
+.mapping-meta {
+  margin: 0.65rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.mapping-hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.mapping-hint.warn {
+  color: var(--warn);
+}
+
+.mapping-hint code {
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.mapping-actions {
+  margin-bottom: 0.85rem;
+}
+
+.mapping-btn {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.mapping-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.mapping-btn.start {
+  background: var(--accent-medium);
+  color: var(--text-primary);
+}
+
+.mapping-btn.stop {
+  background: rgba(248, 113, 113, 0.2);
+  color: var(--danger);
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+.mapping-error {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  color: var(--danger);
+  text-align: center;
+}
+
+.mapping-teleop-section {
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mapping-teleop-section h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-align: center;
+}

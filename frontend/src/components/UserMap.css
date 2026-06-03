@@ -1,0 +1,62 @@
+.user-map {
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.user-map h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.map-svg {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  border-radius: 12px;
+}
+
+.map-bg {
+  fill: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='light'] .map-bg {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+.grid-line {
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1;
+}
+
+.dot {
+  fill: var(--accent);
+  stroke: white;
+  stroke-width: 2;
+}
+
+.dot.me {
+  fill: #a78bfa;
+}
+
+.robot-dot {
+  fill: #34d399;
+  stroke: white;
+  stroke-width: 2;
+  rx: 3;
+}
+
+.dot-label {
+  fill: var(--text-primary);
+  font-size: 9px;
+  text-anchor: middle;
+  font-weight: 600;
+}
+
+.map-legend {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.65rem 0 0;
+}

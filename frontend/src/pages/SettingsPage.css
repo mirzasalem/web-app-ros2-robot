@@ -1,0 +1,73 @@
+.settings-block {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.settings-block h2 {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.settings-block label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.settings-block input[type='text'],
+.settings-block input:not([type='range']) {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+
+.slider-row label {
+  margin-bottom: 1.25rem;
+}
+
+.slider-row input[type='range'] {
+  width: 100%;
+  margin-top: 0.5rem;
+  accent-color: var(--accent);
+}
+
+.success {
+  color: var(--ok);
+  font-size: 0.85rem;
+}
+
+.settings-readonly {
+  margin-bottom: 1rem;
+}
+
+.settings-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.settings-dl dt {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.settings-dl dd {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.settings-admin-note {
+  margin-top: 0.75rem;
+  font-style: italic;
+}

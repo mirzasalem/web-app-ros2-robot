@@ -1,0 +1,40 @@
+.admin-page {
+  max-width: 720px;
+}
+
+.user-table {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.user-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.user-table th,
+.user-table td {
+  text-align: left;
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.user-table input {
+  width: 100%;
+  min-width: 80px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+
+.admin-tag {
+  margin-left: 0.35rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  background: rgba(167, 139, 250, 0.3);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
