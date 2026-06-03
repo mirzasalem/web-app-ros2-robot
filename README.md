@@ -463,3 +463,10 @@ If you have access, see the Buddy package README for hardware setup, `udev` seri
 Web app and integration for the **Buddy** robot by **Mirza Salem**.  
 Buddy robot ROS 2 software: [buddy-ros2](https://github.com/mirzasalem/buddy-ros2) (**private** — contact the author to use).  
 Third-party components (Django, React, Nav2, etc.) remain under their respective licenses.
+
+
+## 👨 Author
+
+Mirza Salem  
+[GitHub](https://github.com/mirzasalem/) | [LinkedIn](https://www.linkedin.com/in/mirzasalem/) | [Portfolio](https://mirzasalem.vercel.app/)
+
