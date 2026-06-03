@@ -1,18 +1,29 @@
 # Buddy Web App
 
-Web control panel for the **Buddy** differential-drive robot ([ROS 2 Jazzy](https://docs.ros.org/en/jazzy/)).  
-Drive the robot, build maps, run localization, and monitor status from a browser — no terminal required for day-to-day use.
+Web control panel for the **Buddy** differential-drive mobile robot — designed and built by **[Mirza Salem](https://github.com/mirzasalem/)**.  
+Runs on [ROS 2 Jazzy](https://docs.ros.org/en/jazzy/): drive the robot, build maps, run localization, and monitor status from a browser without using the terminal for day-to-day operation.
 
 | Layer | Stack |
 |-------|--------|
 | Backend | Django 4 + Django REST Framework + `rclpy` ROS bridge |
 | Frontend | React 19 + Vite |
-| Robot | `ros2 launch buddy …` (mapping / localization) |
+| Robot | `buddy` ROS package — `ros2 launch buddy …` (sources: [buddy-ros2](https://github.com/mirzasalem/buddy-ros2), **private**) |
+
+### Related repositories
+
+| Project | Link / access |
+|---------|----------------|
+| **This web app** | [mirzasalem/web-app-ros2-robot](https://github.com/mirzasalem/web-app-ros2-robot) |
+| **Buddy robot (ROS 2)** | [mirzasalem/buddy-ros2](https://github.com/mirzasalem/buddy-ros2) — **private repository**. To use the Buddy stack or request access, **contact [Mirza Salem](https://github.com/mirzasalem/)**. |
+| **ESP32 firmware** | [mirzasalem/esp2ros2](https://github.com/mirzasalem/esp2ros2) |
+
+**Author:** Mirza Salem
 
 ---
 
 ## Table of contents
 
+- [Author & Buddy robot](#author--buddy-robot)
 - [Features](#features)
 - [Quick start](#quick-start)
 - [Prerequisites](#prerequisites)
@@ -28,6 +39,37 @@ Drive the robot, build maps, run localization, and monitor status from a browser
 - [Documentation](#documentation)
 - [Project layout](#project-layout)
 - [Robot package](#robot-package)
+
+---
+
+## Author & Buddy robot
+
+**Buddy** is a differential-drive robot for indoor mapping and autonomous navigation (ESP32 motor/encoder bridge, RPLidar, Nav2 MPPI). This web app is the browser UI for that stack — teleop, SLAM mapping, AMCL localization, dashboard, and admin tools.
+
+| Resource | URL / note |
+|----------|------------|
+| Buddy ROS 2 package | [buddy-ros2](https://github.com/mirzasalem/buddy-ros2) (**private** — contact Mirza for access) |
+| ESP32 + encoder firmware | https://github.com/mirzasalem/esp2ros2 |
+| Web app (this repo) | https://github.com/mirzasalem/web-app-ros2-robot |
+| Author / contact | [Mirza Salem](https://github.com/mirzasalem/) |
+
+The **buddy-ros2** GitHub repository is **private**. If you want to build or run Buddy on your own hardware, get the robot package, or use this web app with a full stack, **contact Mirza Salem** (GitHub profile above).
+
+Typical workspace layout (after you have the `buddy` package):
+
+```text
+~/ros2_ws/
+├── src/buddy/     # buddy-ros2 (private — provided by Mirza or your org)
+└── webapp/        # web-app-ros2-robot
+```
+
+Navigation launch (on the robot PC, or started from the web UI):
+
+```bash
+ros2 launch buddy robot_navigation.launch.py map:=~/ros2_ws/src/buddy/maps/my_map.yaml lidar_fov_deg:=200
+```
+
+Robot documentation is also available inside the app under **Robot docs** (reads markdown from `BUDDY_PACKAGE_DIR`).
 
 ---
 
@@ -101,18 +143,20 @@ This repo is usually cloned into a ROS 2 workspace, next to the robot package:
 ```text
 ~/ros2_ws/
 ├── src/
-│   └── buddy/          # robot package (separate repo / folder)
-└── webapp/             # this repository
+│   └── buddy/          # buddy-ros2 (private repo)
+└── webapp/             # https://github.com/mirzasalem/web-app-ros2-robot
     ├── backend/
     ├── frontend/
     └── docs/
 ```
 
-Build the robot package once:
+**Buddy robot package:** [buddy-ros2](https://github.com/mirzasalem/buddy-ros2) is **private**. Do not use a public `git clone` unless you already have access. **Contact [Mirza Salem](https://github.com/mirzasalem/)** to obtain the package or collaborator access, then place it at `~/ros2_ws/src/buddy`.
+
+Build the robot package once (when `buddy` is installed):
 
 ```bash
 cd ~/ros2_ws
-colcon build --packages-select buddy
+colcon build --packages-select buddy diffdrive_arduino
 source install/setup.bash
 ```
 
@@ -398,7 +442,24 @@ webapp/
 
 ## Robot package
 
-The **Buddy** robot stack (motors, URDF, Nav2, launches) lives in the separate `buddy` ROS package, typically at `~/ros2_ws/src/buddy`.  
-This web app does not modify the robot package; it launches it and reads topics/maps from your workspace.
+The **Buddy** robot stack — motors, URDF, Nav2, SLAM, launches — lives in the **[buddy-ros2](https://github.com/mirzasalem/buddy-ros2)** package (usually at `~/ros2_ws/src/buddy`). That repository is **private**; **contact [Mirza Salem](https://github.com/mirzasalem/)** for access or licensing.  
+Low-level drive firmware is in **[esp2ros2](https://github.com/mirzasalem/esp2ros2)**.
 
-Set `BUDDY_PACKAGE_DIR` if your `buddy` sources are not in the default path.
+This web app does **not** modify the robot package; it launches `buddy` via `ros2 launch` and reads topics/maps from your workspace.
+
+| Item | Default / note |
+|------|----------------|
+| Package path | `~/ros2_ws/src/buddy` |
+| Override | `BUDDY_PACKAGE_DIR` for **Robot docs** and map paths |
+| Maps | `~/ros2_ws/src/buddy/maps/*.yaml` (`BUDDY_MAP_DIR`) |
+| Access to sources | Private repo — contact Mirza Salem |
+
+If you have access, see the Buddy package README for hardware setup, `udev` serial rules, keyboard teleop, and Nav2 tuning.
+
+---
+
+## License & attribution
+
+Web app and integration for the **Buddy** robot by **Mirza Salem**.  
+Buddy robot ROS 2 software: [buddy-ros2](https://github.com/mirzasalem/buddy-ros2) (**private** — contact the author to use).  
+Third-party components (Django, React, Nav2, etc.) remain under their respective licenses.
